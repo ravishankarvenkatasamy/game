@@ -60,8 +60,7 @@ app.post('/user', (req, res) => {
 });
 
 app.use(cors({
-    origin: 'http://3.108.191.33:3000',
-    credentials: true 
+    origin: '*'
 }));
 
 const PORT = 8081;
