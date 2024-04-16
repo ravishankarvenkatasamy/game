@@ -103,7 +103,7 @@ function App() {
 
     async function postdata(postdata) {
         localStorage.setItem("userdata", true);
-        await axios.post('http://localhost:8081/user', postdata)
+        await axios.post('http://localhost:8000/user', postdata)
             .then((data) => {
                 setAllow(false)
                 console.log(data)
