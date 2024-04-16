@@ -59,6 +59,11 @@ app.post('/user', (req, res) => {
     })
 });
 
+app.use(cors({
+    origin: 'http://3.108.191.33:3000',
+    credentials: true 
+}));
+
 const PORT = 8081;
 app.listen(PORT, () => console.log(`Server running on port k ${PORT}`));
 
