@@ -6,8 +6,9 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use(cors({ origin: 'http://3.111.198.199' }));
-
+app.use(cors({
+    origin: '*'
+}));
 
 // const db = mysql.createConnection({
 //     host: "127.0.0.1",
