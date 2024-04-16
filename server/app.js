@@ -34,6 +34,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/user', (req, res) => {
+    console.log("api triggered get")
     const sql = "SELECT * FROM user"
     db.query(sql, (err, data) => {
         if (err) return res.json(err);
@@ -42,6 +43,7 @@ app.get('/user', (req, res) => {
 
 });
 app.post('/user', (req, res) => {
+    console.log("api triggered post")
 
     const sql = "INSERT INTO user (`player1`, `totalPointsplayer1`, `player2`, `totalPointsplayer2`, `winner`, `winningPoint`, `rounds`) VALUES (?)"
     const values = [
