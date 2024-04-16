@@ -6,7 +6,9 @@ app.use(cors());
 app.use(express.json());
 
 
-
+app.use(cors({
+    origin: '*'
+}));
 
 // const db = mysql.createConnection({
 //     host: "127.0.0.1",
@@ -59,9 +61,7 @@ app.post('/user', (req, res) => {
     })
 });
 
-app.use(cors({
-    origin: '*'
-}));
+
 
 const PORT = 8081;
 app.listen(PORT, () => console.log(`Server running on port k ${PORT}`));
