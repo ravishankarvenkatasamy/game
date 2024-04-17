@@ -18,7 +18,7 @@ function TableList() {
     navigate("/");
   }
   async function getdata() {
-    await axios.get("http://localhost:8000/user")
+    await axios.get("http://13.201.59.97:8000/user")
       .then((data) => {
         setData(data.data.reverse())
         console.log(data)
