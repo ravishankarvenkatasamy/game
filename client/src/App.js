@@ -103,7 +103,7 @@ function App() {
 
     async function postdata(postdata) {
         localStorage.setItem("userdata", true);
-        await axios.post('http://13.201.59.97:8000/user', postdata)
+        await axios.post('http://localhost:8000/match', postdata)
             .then((data) => {
                 setAllow(false)
                 console.log(data)
@@ -133,7 +133,7 @@ function App() {
         setround(round + 1)
 
         const newObject = {
-            round: round,
+            // round: round,
             player1: player1,
             player2: player2,
             player1choice: selectedAction,
@@ -168,8 +168,8 @@ function App() {
                 player2: player2,
                 totalPointsplayer2: winningPlayer2.length,
                 winner: result,
-                winningPoint: totalPoint,
-                rounds: JSON.stringify(objects)
+                winningpoint: totalPoint,
+                rounds: objects
 
             }
             console.log(JSON.stringify(newObjectTwo))

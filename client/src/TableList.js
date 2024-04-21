@@ -18,7 +18,7 @@ function TableList() {
     navigate("/");
   }
   async function getdata() {
-    await axios.get("http://13.201.59.97:8000/user")
+    await axios.get("http://localhost:8000/user")
       .then((data) => {
         setData(data.data.reverse())
         console.log(data)
@@ -52,11 +52,11 @@ function TableList() {
             {data.length ? data.map((roundsArray, index) => (
               <React.Fragment key={index}>
 
-                {JSON.parse(roundsArray.rounds).map((round, innerIndex) => (
+                {roundsArray.rounds.map((round, innerIndex) => (
                   <tr key={innerIndex}>
-                    <td>{round.round + 1}</td>
-                    <td>{round.player1}</td>
-                    <td>{round.player2}</td>
+                    <td>{innerIndex + 1}</td>
+                    <td>{roundsArray.player1}</td>
+                    <td>{roundsArray.player2}</td>
                     <td>{round.player1choice}</td>
                     <td>{round.player2choice}</td>
                     <td>{round.player1score}</td>
@@ -64,8 +64,8 @@ function TableList() {
                   </tr>
                 ))}
                 <tr>
-                  <td className="font-weight-bold">Total Rounds: {JSON.parse(roundsArray.rounds).length} </td>
-                  <td colSpan={7} className="text-center font-weight-bold"> <span className="float-left"> Players : {roundsArray.player1}({roundsArray.totalPointsplayer1}) , {roundsArray.player2}({roundsArray.totalPointsplayer2}) </span>Team {index + 1}<span className="float-right">Winner : {roundsArray.winner}({roundsArray.winningPoint})</span></td>
+                  <td className="font-weight-bold">Total Rounds: {roundsArray.rounds.length} </td>
+                  <td colSpan={7} className="text-center font-weight-bold"> <span className="float-left"> Players : {roundsArray.player1}({roundsArray.totalPointsplayer1}) , {roundsArray.player2}({roundsArray.totalPointsplayer2}) </span>Team {index + 1}<span className="float-right">Winner : {roundsArray.winner}({roundsArray.winningpoint})</span></td>
 
                 </tr>
               </React.Fragment>
